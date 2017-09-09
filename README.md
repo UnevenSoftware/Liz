@@ -5,7 +5,7 @@
 
 ### Gradle Dependency:
 
-*material-intro* is available on [**jitpack.io**](https://jitpack.io/#com.heinrichreimersoftware/material-intro).
+*Liz* is available on [**jitpack.io**](https://jitpack.io/#com.gitlab.dnldsht/Liz).
 
 Add this in your root `build.gradle` file (**not** your module `build.gradle` file):
 ```gradle
