@@ -1,11 +1,15 @@
 # Liz
-[![](https://jitpack.io/v/com.gitlab.dnldsht/Liz.svg)](https://jitpack.io/#com.gitlab.dnldsht/Liz)
+[![](https://jitpack.io/v/com.github.HoraApps/Liz.svg)](https://jitpack.io/#com.github.HoraApps/Liz)
+
+Add support to themes in your app.
+
+Usage example [LeafPic](https://github.com/HoraApps/LeafPic)
 
 ## Setup:
 
 ### Gradle Dependency:
 
-*Liz* is available on [**jitpack.io**](https://jitpack.io/#com.gitlab.dnldsht/Liz).
+*Liz* is available on [**jitpack.io**](https://jitpack.io/#com.github.HoraApps/Liz).
 
 Add this in your root `build.gradle` file (**not** your module `build.gradle` file):
 ```gradle
@@ -20,6 +24,6 @@ Add this in your module `build.gradle` file:
 ```gradle
 
 dependencies {
-    compile 'com.gitlab.dnldsht:Liz:0.5.1'
+    implementation 'com.github.HoraApps:Liz:-SNAPSHOT'
 }
 ```

@@ -53,4 +53,9 @@ public class ThemedDialogFragment extends DialogFragment {
     public int getTextColor() {
         return themeHelper.getTextColor();
     }
+
+    @Override
+    public int getTheme() {
+        return getDialogStyle();
+    }
 }
