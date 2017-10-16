@@ -23,6 +23,7 @@ android {
         }
     }
 
+    buildToolsVersion '26.0.2'
 }
 
 dependencies {
@@ -34,5 +35,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation project(':library')
+    implementation "com.orhanobut:hawk:2.0.1"
 
 }
