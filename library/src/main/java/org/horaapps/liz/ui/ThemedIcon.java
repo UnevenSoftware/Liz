@@ -30,4 +30,8 @@ public class ThemedIcon extends IconicsImageView implements Themed {
     public void refreshTheme(ThemeHelper theme) {
         setColor(theme.getIconColor());
     }
+
+    public void setColor(int color) {
+        setIcon(getIcon().color(color));
+    }
 }
