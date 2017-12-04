@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 
+import com.mikepenz.iconics.typeface.IIcon;
 import com.mikepenz.iconics.view.IconicsImageView;
 
 import org.horaapps.liz.ThemeHelper;
@@ -33,5 +34,9 @@ public class ThemedIcon extends IconicsImageView implements Themed {
 
     public void setColor(int color) {
         setIcon(getIcon().color(color));
+    }
+
+    public void setIcon(IIcon icon) {
+        setIcon(getIcon().icon(icon));
     }
 }
