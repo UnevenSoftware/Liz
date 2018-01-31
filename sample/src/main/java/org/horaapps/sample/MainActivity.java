@@ -1,6 +1,7 @@
 package org.horaapps.sample;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import org.horaapps.liz.ThemedActivity;
@@ -15,12 +16,14 @@ public class MainActivity extends ThemedActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-        setupView();
     }
 
     private void init() {
         recyclerViewSample = findViewById(R.id.recyclerView_sample);
+        recyclerViewSample.setHasFixedSize(true);
+        recyclerViewSample.setLayoutManager(new LinearLayoutManager(this));
         sampleAdapter = new SampleAdapter(this);
+        setupView();
     }
 
     private void setupView() {

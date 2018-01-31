@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.horaapps.liz.ui.ThemedCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/small_spacing">
+
+        <org.horaapps.liz.ui.ThemedTextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/themed_sample_text_view"
+            android:textAllCaps="true" />
+
+        <LinearLayout
+            android:id="@+id/des_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:orientation="horizontal">
+
+            <org.horaapps.liz.ui.ThemedIcon
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/sub_small_spacing"
+                android:src="@drawable/ic_empty_amoled" />
+
+            <org.horaapps.liz.ui.ThemedEditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_spacing"
+                android:text="@string/themed_sample_edit_text" />
+        </LinearLayout>
+    </RelativeLayout>
+</org.horaapps.liz.ui.ThemedCardView>
