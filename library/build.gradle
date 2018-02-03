@@ -5,7 +5,6 @@ group='com.gitlab.liz'
 
 android {
     compileSdkVersion project.sdkVersion
-    buildToolsVersion project.buildToolsVersion
 
     defaultConfig {
         minSdkVersion 19
