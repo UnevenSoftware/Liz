@@ -1,17 +1,21 @@
 package org.horaapps.sample;
 
-import android.app.Application;
-import com.orhanobut.hawk.Hawk;
+import com.mikepenz.community_material_typeface_library.CommunityMaterial;
+import com.mikepenz.iconics.Iconics;
 
 /**
  * Created by Jibo on 16/10/2017.
  */
 
-public class App extends Application {
+public class App extends org.horaapps.liz.App {
 
     @Override
     public void onCreate() {
         super.onCreate();
-        Hawk.init(this).build();
+        registerIcons();
+    }
+
+    private void registerIcons() {
+        Iconics.registerFont(new CommunityMaterial());
     }
 }

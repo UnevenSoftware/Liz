@@ -13,4 +13,10 @@ public abstract class ThemedViewHolder extends RecyclerView.ViewHolder implement
         super(view);
     }
 
+    @Override
+    public void refreshTheme(ThemeHelper themeHelper) {
+        for (View view : ViewUtil.getAllChildren(itemView)) {
+            if (view instanceof Themed) ((Themed) view).refreshTheme(themeHelper);
+        }
+    }
 }

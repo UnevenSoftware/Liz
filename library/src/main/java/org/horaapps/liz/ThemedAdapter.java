@@ -24,6 +24,11 @@ public abstract class ThemedAdapter<VH extends ThemedViewHolder>  extends Recycl
     }
 
     @Override
+    public void onBindViewHolder(VH holder, int position) {
+        holder.refreshTheme(getThemeHelper());
+    }
+
+    @Override
     public void refreshTheme(ThemeHelper theme) {
         setThemeHelper(theme);
         notifyDataSetChanged();

@@ -32,7 +32,7 @@ public class ThemedLinearLayout extends LinearLayoutCompat implements Themed {
                 attrs,
                 R.styleable.ThemedLinearLayout,
                 0, 0);
-        color = a.getInt(R.styleable.ThemedLinearLayout_background_type, 1);
+        color = a.getInt(R.styleable.ThemedLinearLayout_liz_background_style, 1);
         a.recycle();
     }
 

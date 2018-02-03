@@ -4,7 +4,7 @@
 
     <!--ICONS-->
     <dimen name="icon_margin">24dp</dimen>
-    <dimen name="icon_width_height">20dp</dimen>
+    <dimen name="icon_size">20dp</dimen>
     <dimen name="big_icon">36dp</dimen>
     <dimen name="icon_sub_width_height">16dp</dimen>
     <dimen name="icon_elevation">10dp</dimen>

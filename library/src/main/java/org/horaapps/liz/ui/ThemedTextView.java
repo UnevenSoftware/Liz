@@ -33,7 +33,7 @@ public class ThemedTextView extends AppCompatTextView implements Themed {
                 attrs,
                 R.styleable.ThemedTextView,
                 0, 0);
-        color = a.getInt(R.styleable.ThemedTextView_type, 3);
+        color = a.getInt(R.styleable.ThemedTextView_liz_color_style, 3);
         a.recycle();
     }
 

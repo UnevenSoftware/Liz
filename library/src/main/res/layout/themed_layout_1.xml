@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <org.horaapps.liz.ui.ThemedCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,23 +13,23 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            app:liz_color_style="accent"
+            android:textSize="@dimen/big_text"
             android:text="@string/themed_sample_text_view"
-            android:textAllCaps="true" />
+            android:textStyle="bold" />
 
         <LinearLayout
             android:id="@+id/des_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/title"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <org.horaapps.liz.ui.ThemedIcon
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="@dimen/sub_small_spacing"
-                android:src="@drawable/ic_empty_amoled" />
+                android:layout_width="@dimen/big_icon"
+                android:layout_height="@dimen/big_icon"
+                app:ico_icon="cmd_album" />
 
             <org.horaapps.liz.ui.ThemedEditText
                 android:layout_width="wrap_content"

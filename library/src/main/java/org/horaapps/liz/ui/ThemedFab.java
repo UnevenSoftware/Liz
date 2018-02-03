@@ -35,7 +35,7 @@ public class ThemedFab extends FloatingActionButton implements Themed {
         super(context, attrs, defStyleAttr);
 
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.ThemedFab);
-        setIcon(a.getString(R.styleable.ThemedFab_fab_icon));
+        setIcon(a.getString(R.styleable.ThemedFab_liz_icon));
         a.recycle();
     }
 

@@ -1,35 +1,35 @@
 package org.horaapps.sample;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import org.horaapps.liz.ThemedAdapter;
+import org.horaapps.liz.ThemedViewHolder;
 
 import java.util.ArrayList;
 
-public class SampleAdapter extends ThemedAdapter {
+public class SampleAdapter extends ThemedAdapter<SampleAdapter.ViewHolder> {
     private ArrayList<Integer> numOfCardViews = new ArrayList<>();
 
     public SampleAdapter(Context context) {
         super(context);
 
         /* creating only one CardView currently */
-        this.numOfCardViews.add(1);
+        this.numOfCardViews.add(0);
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.themed_layout_1, parent, false);
-        return new ThemedHolder(v);
+        return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        super.onBindViewHolder(holder, position);
     }
 
     @Override
@@ -37,9 +37,9 @@ public class SampleAdapter extends ThemedAdapter {
         return numOfCardViews.size();
     }
 
-    public static class ThemedHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends ThemedViewHolder {
 
-        public ThemedHolder(View view) {
+        ViewHolder(View view) {
             super(view);
         }
     }
