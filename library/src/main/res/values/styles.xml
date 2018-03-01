@@ -48,4 +48,16 @@
         <item name="android:windowBackground">@color/md_black_1000</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
     </style>
+
+    <style name="ToolbarTheme" parent="Widget.AppCompat.Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elevation" tools:ignore="NewApi">5dp</item>
+        <item name="theme">@style/BaseToolbarTheme</item>
+    </style>
+    <style name="BaseToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">#FFF</item>
+        <item name="colorControlNormal">#FFF</item>
+        <item name="colorControlHighlight">#FFF</item>
+    </style>
 </resources>
