@@ -16,6 +16,11 @@ import org.horaapps.liz.Themed;
  */
 public class ThemedTextView extends AppCompatTextView implements Themed {
 
+    public static final int ACCENT_COLOR = 1;
+    public static final int PRIMARY_COLOR = 2;
+    public static final int TEXT_COLOR = 3;
+    public static final int SUB_TEXT_COLOR = 4;
+
     int color;
 
     public ThemedTextView(Context context) {
@@ -54,5 +59,10 @@ public class ThemedTextView extends AppCompatTextView implements Themed {
                 setTextColor(theme.getSubTextColor());
                 break;
         }
+    }
+
+
+    public void setStyleColor(int color) {
+        this.color = color;
     }
 }
