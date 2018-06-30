@@ -271,7 +271,7 @@ public class ThemeHelper {
 		}
 	}
 
-	private ColorStateList getTintList(){
+	public ColorStateList getTintList(){
 		return new ColorStateList(
 				new int[][]{
 						new int[]{ -android.R.attr.state_enabled }, //disabled
