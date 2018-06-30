@@ -37,11 +37,11 @@ public class ThemeHelper {
 
 	private Context context;
 
-	Theme baseTheme;
+	private Theme baseTheme;
 	private int primaryColor;
 	private int accentColor;
 
-	private ThemeHelper(Context context) {
+	public ThemeHelper(Context context) {
 		this.context = context;
 	}
 
