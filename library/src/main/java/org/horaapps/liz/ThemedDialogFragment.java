@@ -3,19 +3,22 @@ package org.horaapps.liz;
 import android.content.Context;
 import android.support.v4.app.DialogFragment;
 
+import javax.inject.Inject;
+
 /**
  * Created by dnld on 9/9/17.
  */
 
 public class ThemedDialogFragment extends DialogFragment {
-    ThemeHelper themeHelper;
+    @Inject ThemeHelper themeHelper;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         /*if (context instanceof ThemedActivity)
             themeHelper = ((ThemedActivity) context).getThemeHelper();*/
-        themeHelper = ThemeHelper.getInstance(getContext());
+        App.get(context).inject(this);
+
     }
 
     public ThemeHelper getThemeHelper() {

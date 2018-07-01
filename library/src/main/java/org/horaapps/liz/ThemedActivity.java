@@ -2,35 +2,24 @@ package org.horaapps.liz;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SwitchCompat;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.RadioButton;
-import android.widget.ScrollView;
-import android.widget.SeekBar;
-import android.widget.TextView;
 
-import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.iconics.context.IconicsContextWrapper;
-import com.mikepenz.iconics.typeface.IIcon;
 import com.orhanobut.hawk.Hawk;
 
-import java.util.ArrayList;
+import javax.inject.Inject;
 
 /**
  * Created by dnld on 23/02/16.
  */
 public abstract class ThemedActivity extends AppCompatActivity implements UiElementInizializer {
 
-    private ThemeHelper themeHelper;
+    @Inject ThemeHelper themeHelper;
 
     private boolean coloredNavBar;
     private boolean obscuredStatusBar;
@@ -41,7 +30,9 @@ public abstract class ThemedActivity extends AppCompatActivity implements UiElem
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        themeHelper = ThemeHelper.getInstance(getApplicationContext());
+
+        ((App) getApplicationContext()).getThemeHelperComponent().inject(this);
+        //themeHelper = Liz.get();
     }
 
     @Override
@@ -54,7 +45,7 @@ public abstract class ThemedActivity extends AppCompatActivity implements UiElem
     public ThemeHelper getThemeHelper() { return themeHelper; }
 
     public void updateTheme(){
-        themeHelper.updateTheme();
+        //themeHelper.updateTheme();
         coloredNavBar = Hawk.get(getString(R.string.preference_colored_nav_bar), false);
         obscuredStatusBar = Hawk.get(getString(R.string.preference_translucent_status_bar), true);
         applyThemeSingleImgAct = Hawk.get("apply_theme_img_act", true);
@@ -96,9 +87,6 @@ public abstract class ThemedActivity extends AppCompatActivity implements UiElem
         }
     }
 
-    protected void setScrollViewColor(ScrollView scr){
-        themeHelper.setScrollViewColor(scr);
-    }
 
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -133,13 +121,13 @@ public abstract class ThemedActivity extends AppCompatActivity implements UiElem
         /*return 255 - SP.getInt(getString(org.horaapps.leafpic.R.string.preference_transparency), 0);*/
     }
 
-    public void setBaseTheme(Theme baseTheme) {
+  /*  public void setBaseTheme(Theme baseTheme) {
         themeHelper.setBaseTheme(baseTheme);
     }
 
     public void themeSeekBar(SeekBar bar) {
         themeHelper.themeSeekBar(bar);
-    }
+    }*/
     public int getPrimaryColor() {
         return themeHelper.getPrimaryColor();
     }
@@ -154,9 +142,9 @@ public abstract class ThemedActivity extends AppCompatActivity implements UiElem
         return themeHelper.getBackgroundColor();
     }
 
-    protected Drawable getPlaceHolder(){
+/*    protected Drawable getPlaceHolder(){
         return themeHelper.getPlaceHolder();
-    }
+    }*/
 
     protected int getInvertedBackgroundColor(){
         return themeHelper.getInvertedBackgroundColor();
@@ -178,9 +166,9 @@ public abstract class ThemedActivity extends AppCompatActivity implements UiElem
         return themeHelper.getIconColor();
     }
 
-    protected int getDrawerBackground(){
+   /* protected int getDrawerBackground(){
         return themeHelper.getDrawerBackground();
-    }
+    }*/
 
     public int getDialogStyle(){
         return themeHelper.getDialogStyle();
@@ -190,15 +178,15 @@ public abstract class ThemedActivity extends AppCompatActivity implements UiElem
         return themeHelper.getPopupToolbarStyle();
     }
 
-    protected ArrayAdapter<String> getSpinnerAdapter(ArrayList<String> items) {
+    /*protected ArrayAdapter<String> getSpinnerAdapter(ArrayList<String> items) {
         return themeHelper.getSpinnerAdapter(items);
-    }
+    }*/
 
-    protected int getDefaultThemeToolbarColor3th(){
+    /*protected int getDefaultThemeToolbarColor3th(){
         return themeHelper.getDefaultThemeToolbarColor3th();
-    }
+    }*/
 
-    public void themeRadioButton(RadioButton radioButton) {
+   /* public void themeRadioButton(RadioButton radioButton) {
         themeHelper.themeRadioButton(radioButton);
     }
 
@@ -220,5 +208,5 @@ public abstract class ThemedActivity extends AppCompatActivity implements UiElem
 
     public IconicsDrawable getToolbarIcon(IIcon icon){
         return themeHelper.getToolbarIcon(icon);
-    }
+    }*/
 }

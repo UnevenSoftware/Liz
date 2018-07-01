@@ -3,26 +3,28 @@ package org.horaapps.liz;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 
+import javax.inject.Inject;
+
 /**
  * Created by dnld on 3/31/17.
  */
 
 public abstract class ThemedFragment extends Fragment implements Themed {
 
-    ThemeHelper themeHelper;
+    @Inject ThemeHelper themeHelper;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         /*if (context instanceof ThemedActivity)
             themeHelper = ((ThemedActivity) context).getThemeHelper();*/
-        themeHelper = ThemeHelper.getInstance(getContext());
+        App.get(getContext()).inject(this);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        themeHelper.updateTheme();
+//        themeHelper.updateTheme();
         refreshTheme(themeHelper);
     }
 

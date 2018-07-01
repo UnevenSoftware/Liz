@@ -3,24 +3,25 @@ package org.horaapps.liz;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 
+import javax.inject.Inject;
+
 /**
  * Created by dnld on 01/04/17.
  */
 
 public abstract class ThemedAdapter<VH extends ThemedViewHolder>  extends RecyclerView.Adapter<VH> implements Themed {
 
-    private ThemeHelper themeHelper;
+    @Inject ThemeHelperWrapperBecauseDaggerDontLikeGenerics themeHelperWrapper;
 
     public ThemedAdapter(Context context) {
-        themeHelper = ThemeHelper.getInstanceLoaded(context);
+        themeHelperWrapper = new ThemeHelperWrapperBecauseDaggerDontLikeGenerics();
+        /*this.setThemeHelper(new StaticThemeProvider(context));*/
+        App.get(context).inject(themeHelperWrapper);
     }
+
 
     public ThemeHelper getThemeHelper() {
-        return themeHelper;
-    }
-
-    public void setThemeHelper(ThemeHelper themeHelper) {
-        this.themeHelper = themeHelper;
+        return themeHelperWrapper.getThemeHelper();
     }
 
     @Override
@@ -30,7 +31,7 @@ public abstract class ThemedAdapter<VH extends ThemedViewHolder>  extends Recycl
 
     @Override
     public void refreshTheme(ThemeHelper theme) {
-        setThemeHelper(theme);
+        /*setThemeHelper(theme);*/
         notifyDataSetChanged();
     }
 }

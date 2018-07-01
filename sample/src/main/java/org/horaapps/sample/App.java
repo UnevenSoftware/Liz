@@ -12,8 +12,10 @@ public class App extends org.horaapps.liz.App {
     @Override
     public void onCreate() {
         super.onCreate();
+        setupDi(new ThemeHelperModule(getApplicationContext()));
         registerIcons();
     }
+
 
     private void registerIcons() {
         Iconics.registerFont(new CommunityMaterial());

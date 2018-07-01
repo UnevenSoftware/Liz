@@ -4,17 +4,19 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.view.View;
 
+import javax.inject.Inject;
+
 /**
  * Created by dnld on 4/16/17.
  */
 
 public class ThemedAlertDialogBuilder extends AlertDialog.Builder {
 
-    private ThemeHelper themeHelper;
+    @Inject ThemeHelper themeHelper;
 
-    public ThemedAlertDialogBuilder(Context context, ThemeHelper themeHelper) {
-        super(context, themeHelper.getDialogStyle());
-        this.themeHelper = themeHelper;
+    public ThemedAlertDialogBuilder(Context context) {
+        super(context);
+        App.get(context).inject(this);
     }
 
     @Override
